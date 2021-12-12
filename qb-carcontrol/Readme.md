@@ -1,6 +1,13 @@
 # A Car Control Menu for QBCore Framework
 
-Preview Coming Soon!
+## Preview 
+https://cdn.discordapp.com/attachments/730702655294275685/919412694736580668/FiveM_-_N1GHTM4R3_Dev_12_11_2021_5_56_02_PM.png
+https://cdn.discordapp.com/attachments/730702655294275685/919412695529291816/FiveM_-_N1GHTM4R3_Dev_12_11_2021_5_56_23_PM.png
+https://cdn.discordapp.com/attachments/730702655294275685/919413194823462952/FiveM_-_N1GHTM4R3_Dev_12_11_2021_12_25_49_PM.png
+https://cdn.discordapp.com/attachments/730702655294275685/919412736843190303/FiveM_-_N1GHTM4R3_Dev_12_11_2021_6_17_31_PM.png
+https://cdn.discordapp.com/attachments/730702655294275685/919412697622249572/FiveM_-_N1GHTM4R3_Dev_12_11_2021_10_05_16_AM.png
+https://cdn.discordapp.com/attachments/730702655294275685/919412696196198430/FiveM_-_N1GHTM4R3_Dev_12_11_2021_10_26_37_AM.png
+https://cdn.discordapp.com/attachments/730702655294275685/919412698394005594/FiveM_-_N1GHTM4R3_Dev_12_11_2021_6_16_46_PM.png
 
 
 ## Please note
@@ -36,7 +43,7 @@ Plans to be added in next few updates -
 `Will Add Neon Lights if Owned Turn On & Off`
 `Will Look into Adding Examination for PD as well to see if vehicle is modified for racing - i.e, Nos, Turbo`
 
-## Rename client/main.lua to cl_carcontrol.lua --> @qb-smallresources --> client /
+## Insert cl_carcontrol.lua --> @qb-smallresources --> client /
 
 `To add qb-vehiclemenu in to your Radial Menu, Add this into the config file under the vehicle section it will trigger the qb-menu while in a vehicle. `
 ```
