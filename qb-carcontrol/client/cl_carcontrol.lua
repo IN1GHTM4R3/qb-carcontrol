@@ -10,7 +10,7 @@ AddEventHandler('ccvehmenu:client:openMenu', function()
     end
 end)
 
-RegisterNetEvent('ccvehiclemenu:windowsControl', function(args)
+RegisterNetEvent('qb-vehiclemenu:windowscontrol', function(args)
     local veh = GetVehiclePedIsIn(PlayerPedId(), false)
     local args = tonumber(args)
         if IsPedInAnyVehicle(PlayerPedId(), true) then
@@ -50,7 +50,7 @@ RegisterNetEvent('ccvehiclemenu:windowsControl', function(args)
         end
 end)
 
-RegisterNetEvent('ccvehiclemenu:seatControl', function(args)
+RegisterNetEvent('qb-vehiclemenu:seatcontrol', function(args)
     local veh = GetVehiclePedIsIn(PlayerPedId(), false)
     local IsSeatFree = IsVehicleSeatFree(veh, -2)
         if veh == GetVehiclePedIsIn(PlayerPedId(), true) then
@@ -85,7 +85,7 @@ RegisterNetEvent('ccvehiclemenu:seatControl', function(args)
         end
 end)
 
-RegisterNetEvent('ccvehiclemenu:engineControl:on', function(args)
+RegisterNetEvent('qb-vehiclemenu:enginecontrol:on', function(args)
     local veh = GetVehiclePedIsIn(PlayerPedId(), false)
     local args = tonumber(args)
     local IsSeatFree = IsVehicleSeatFree(veh, -1)
@@ -104,7 +104,7 @@ RegisterNetEvent('ccvehiclemenu:engineControl:on', function(args)
     end
 end)
 
-RegisterNetEvent('ccvehiclemenu:doorControl', function(args)
+RegisterNetEvent('qb-vehiclemenu:doorcontrol', function(args)
     local veh = GetVehiclePedIsIn(PlayerPedId(), false)
     local IsSeatFree = IsVehicleSeatFree(veh, -2)
         if veh == GetVehiclePedIsIn(PlayerPedId(), true) then
@@ -220,7 +220,7 @@ function createWindowsMenu()
 			txt = "Choose Driver Window",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:windowsControl",
+                event = "qb-vehiclemenu:windowscontrol",
                 args = 1,
             }
         },
@@ -229,7 +229,7 @@ function createWindowsMenu()
 			txt = " Choose Passenger Window",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:windowsControl",
+                event = "qb-vehiclemenu:windowscontrol",
                 args = 2,
             }
         },
@@ -238,7 +238,7 @@ function createWindowsMenu()
 			txt = "Choose Rear Driver Side Window",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:windowsControl",
+                event = "qb-vehiclemenu:windowscontrol",
                 args = 3,
             }
         },
@@ -247,7 +247,7 @@ function createWindowsMenu()
 			txt = "Choose Rear Passenger Side Window",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:windowsControl",
+                event = "qb-vehiclemenu:windowscontrol",
                 args = 4,
             }
         },
@@ -256,7 +256,7 @@ function createWindowsMenu()
 			txt = "Choose Driver Window",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:windowsControl",
+                event = "qb-vehiclemenu:windowscontrol",
                 args = 5,
             }
         },
@@ -265,7 +265,7 @@ function createWindowsMenu()
 			txt = "Choose Passenger Window",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:windowsControl",
+                event = "qb-vehiclemenu:windowscontrol",
                 args = 6,
             }
         },
@@ -274,7 +274,7 @@ function createWindowsMenu()
 			txt = "Choose Rear Driver Side Window",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:windowsControl",
+                event = "qb-vehiclemenu:windowscontrol",
                 args = 7,
             }
         },
@@ -283,7 +283,7 @@ function createWindowsMenu()
 			txt = "Choose Rear Passenger Window",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:windowsControl",
+                event = "qb-vehiclemenu:windowscontrol",
                 args = 8,
             }
         },
@@ -303,14 +303,14 @@ function createSeatMenu()
     seatMenu = {
         {
             isHeader = true,
-            header = ' 🚓 | Window Controls'
+            header = ' 🚓 | Seat Controls'
         },
         {
             header = "Swap To Driver",
 			txt = "Choose Driver Seat",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:seatControl",
+                event = "qb-vehiclemenu:seatcontrol",
                 args = 1,
             }
         },
@@ -319,7 +319,7 @@ function createSeatMenu()
 			txt = "Choose Passenger Seat",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:seatControl",
+                event = "qb-vehiclemenu:seatcontrol",
                 args = 2,
             }
         },
@@ -328,7 +328,7 @@ function createSeatMenu()
 			txt = "Choose Driver Rear Seat",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:seatControl",
+                event = "qb-vehiclemenu:seatcontrol",
                 args = 3,
             }
         },
@@ -337,7 +337,7 @@ function createSeatMenu()
 			txt = "Choose Passenger Rear Seat",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:seatControl",
+                event = "qb-vehiclemenu:seatcontrol",
                 args = 4,
             }
         },
@@ -346,7 +346,7 @@ function createSeatMenu()
             txt = 'Go Back to Car Control Menu',
             params = {
                 isServer = false,
-                event = 'ccvehmenu:client:ccMenu',
+                event = 'qb-vehiclemenu:seatcontrol',
             }
         },
     }
@@ -364,7 +364,7 @@ function createEngineMenu()
 			txt = "Turn Engine On",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:engineControl:on",
+                event = "qb-vehiclemenu:enginecontrol:on",
                 args = 1
             }
         },
@@ -373,7 +373,7 @@ function createEngineMenu()
 			txt = "Turn Engine On",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:engineControl:on",
+                event = "qb-vehiclemenu:enginecontrol:on",
                 args = 2
             }
         },
@@ -400,7 +400,7 @@ function createDoorMenu()
 			txt = "Open All Doors",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:doorControl",
+                event = "qb-vehiclemenu:doorcontrol",
                 args = 8
             }
         },
@@ -409,7 +409,7 @@ function createDoorMenu()
 			txt = "Open Driver Door",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:doorControl",
+                event = "qb-vehiclemenu:doorcontrol",
                 args = 1
             }
         },
@@ -418,7 +418,7 @@ function createDoorMenu()
 			txt = "Open Passenger Door",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:doorControl",
+                event = "qb-vehiclemenu:doorcontrol",
                 args = 2
             }
         },
@@ -427,7 +427,7 @@ function createDoorMenu()
 			txt = "Open Left Rear Door",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:doorControl",
+                event = "qb-vehiclemenu:doorcontrol",
                 args = 3
             }
         },
@@ -436,7 +436,7 @@ function createDoorMenu()
 			txt = "Open Right Rear Door",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:doorControl",
+                event = "qb-vehiclemenu:doorcontrol",
                 args = 4
             }
         },
@@ -445,7 +445,7 @@ function createDoorMenu()
 			txt = "Open Hood",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:doorControl",
+                event = "qb-vehiclemenu:doorcontrol",
                 args = 5
             }
         },
@@ -454,7 +454,7 @@ function createDoorMenu()
 			txt = "Open Trunk",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:doorControl",
+                event = "qb-vehiclemenu:doorcontrol",
                 args = 6
             }
         },
@@ -463,7 +463,7 @@ function createDoorMenu()
 			txt = "Shut All Doors",
 			params = {
                 isServer = false,
-                event = "ccvehiclemenu:doorControl",
+                event = "qb-vehiclemenu:doorcontrol",
                 args = 7
             }
         },
