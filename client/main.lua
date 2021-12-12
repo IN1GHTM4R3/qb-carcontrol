@@ -346,7 +346,7 @@ function createSeatMenu()
             txt = 'Go Back to Car Control Menu',
             params = {
                 isServer = false,
-                event = 'qb-vehiclemenu:seatcontrol',
+                event = 'ccvehmenu:client:ccMenu',
             }
         },
     }
