@@ -1,6 +1,10 @@
 # A Car Control Menu for QBCore Framework
 
-## Preview 
+## Preview
+https://www.youtube.com/watch?v=S7tLcf5Q5WE
+
+
+## Screenshots
 https://cdn.discordapp.com/attachments/730702655294275685/919412694736580668/FiveM_-_N1GHTM4R3_Dev_12_11_2021_5_56_02_PM.png
 https://cdn.discordapp.com/attachments/730702655294275685/919412695529291816/FiveM_-_N1GHTM4R3_Dev_12_11_2021_5_56_23_PM.png
 https://cdn.discordapp.com/attachments/730702655294275685/919413194823462952/FiveM_-_N1GHTM4R3_Dev_12_11_2021_12_25_49_PM.png
@@ -30,22 +34,47 @@ qb-radialmenu - https://github.com/qbcore-framework/qb-radialmenu
 
 ## Credits : 
 
-- Kakarot for qb-menu.
+- `Kakarot` for qb-menu, qb-core framework
+- `Pawsative` for Neon Light Function Natives
 
 ## Soon To Come | Planned Updates
 
-- Next Version Release - 
+-----------------------------------------------------------------------------------------------------------------
+
+## Next Version To Be Released - 
+
+`Version 1.1.0 is Coming SOON ™️`
+
+Added a `Vehicle Seat Check` to Display Proper Seat, Windows, and Doors Menus for 2 Door & 4 Doors Vehicles
+
+Added `Job Lock` function to Livery Menu 
+
+Added `Neon Light Menu` to toggle on/off your neon light kit must be installed for it to work. (Notifies if no lights are installed.)
+
+Added `Livery Menu` section for PD/EMS/Mechanic Livery Selection in the New Livery Menu
+
+Working on Adding Vehicle Extras Menu - Switch On/Off Vehicle Extras (Will be released in 1.1.x)
+
+-----------------------------------------------------------------------------------------------------------------
+
+`Known Bugs`
+
+Job Check system is being fine tuned, wanting to add proper success & error functions - Working to resolve this
+
+-----------------------------------------------------------------------------------------------------------------
 
 Plans to be added in next few updates - 
 `Will be looking for a way to figure out how to keep the qb-menu Menu up after selection for doors, windows, and seats`
-`Will Add Job Check for PD/EMS/Mechanic for Car Livery Selection and Extras Built In`
-`Will Add Vehicle Examination For Mechanics`
-`Will Add Neon Lights if Owned Turn On & Off`
-`Will Look into Adding Examination for PD as well to see if vehicle is modified for racing - i.e, Nos, Turbo`
+`Will Add Extras Menu Built In`
+`Will Add Vehicle Examination For Mechanics (future plans)`
+`Will Look into Adding Examination for PD as well to see if vehicle is modified for racing - i.e, Nos, Turbo (future plan)`
 
-## if you want to combine it in to an already made resource like qb-smallresources just rename "main.lua" to "cl_carcontrol.lua" and add make sure to add it in--> @qb-smallresources --> client / update as well as update the fxmanifest of qb-smallresources, if you do this.
+-----------------------------------------------------------------------------------------------------------------
+
+## If you want to combine it in to an already made resource like qb-smallresources just rename "main.lua" to "cl_carcontrol.lua" and add make sure to add it in--> @qb-smallresources --> client / update as well as update the fxmanifest of qb-smallresources, if you do this.
 
 `To add qb-carcontrol in to your Radial Menu, open qb-radialmenu/config.lua file and (Add+) this snippet below into the config file under the vehicle section. It will open the qb-carcontrol menu while you are in a vehicle. `
+
 ```
        	   {
                 id = 'vehiclemenu',
@@ -58,7 +87,8 @@ Plans to be added in next few updates -
 ```
 `Place the above snippet inside this radialmenu section titled "vehicle" [3] = {`
 
-``` [3] = {
+``` 
+    [3] = {
         id = 'vehicle',
         title = 'Vehicle',
         icon = 'car',
@@ -69,7 +99,8 @@ Plans to be added in next few updates -
             
 `should line up in the config section right above selection #4 inside the qb-radialmenu/config, this will add it to the correct vehicle section #3`    
             
-```     [4] = {
+``` 
+    [4] = {
         id = 'jobinteractions',
         title = 'Work',
         icon = 'briefcase',
