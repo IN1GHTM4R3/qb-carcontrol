@@ -43,9 +43,9 @@ Plans to be added in next few updates -
 `Will Add Neon Lights if Owned Turn On & Off`
 `Will Look into Adding Examination for PD as well to see if vehicle is modified for racing - i.e, Nos, Turbo`
 
-## if you want to chunk in rename "main.lua" to "cl_carcontrol.lua" and add it in--> @qb-smallresources --> client / update the fxmanifest of qb-smallresources if you do this.
+## if you want to combine it in to an already made resource like qb-smallresources just rename "main.lua" to "cl_carcontrol.lua" and add make sure to add it in--> @qb-smallresources --> client / update as well as update the fxmanifest of qb-smallresources, if you do this.
 
-`To add qb-vehiclemenu in to your Radial Menu, Add this into the config file under the vehicle section it will trigger the qb-menu while in a vehicle. `
+`To add qb-carcontrol in to your Radial Menu, open qb-radialmenu/config.lua file and (Add+) this snippet below into the config file under the vehicle section. It will open the qb-carcontrol menu while you are in a vehicle. `
 ```
        	   {
                 id = 'vehiclemenu',
