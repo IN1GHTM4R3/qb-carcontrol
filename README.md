@@ -58,18 +58,21 @@ Plans to be added in next few updates -
 ```
 `Place the above snippet inside this radialmenu section titled "vehicle"`
 
-```[3] = {
+``` [3] = {
         id = 'vehicle',
         title = 'Vehicle',
         icon = 'car',
         items = {
-            {``` 
+        {
+    }
+``` 
             
 `should line up in the config section right above selection #4 inside the qb-radialmenu/config, this will add it to the correct vehicle section #3`    
             
-```[4] = {
+```     [4] = {
         id = 'jobinteractions',
         title = 'Work',
         icon = 'briefcase',
         items = {}
-    }```
+    }
+```
