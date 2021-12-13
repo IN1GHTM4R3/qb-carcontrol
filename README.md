@@ -56,7 +56,7 @@ Plans to be added in next few updates -
                 shouldClose = true
             }
 ```
-`Place the above snippet inside this radialmenu section titled "vehicle"`
+`Place the above snippet inside this radialmenu section titled "vehicle" [3] = {`
 
 ``` [3] = {
         id = 'vehicle',
