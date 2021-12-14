@@ -72,6 +72,7 @@ RegisterNetEvent('qb-vehiclemenu:windowscontrol', function(args)
                 RollUpWindow(veh, 3)
                 QBCore.Functions.Notify("Rolled Up Driver Window", "success", 3500)
                 end
+                TriggerEvent('ccvehmenu:client:windowsMenu')
         end
 end)
 
@@ -94,12 +95,19 @@ RegisterNetEvent('qb-vehiclemenu:seatcontrol', function(args)
                     elseif args == 3 then 
                     IsVehicleSeatFree(veh, 1)
                     SetPedIntoVehicle(PlayerPedId(), veh, 1)
-
                     QBCore.Functions.Notify("Rear Left Seat", "success", 3500)
                     elseif args == 4 then 
                     IsVehicleSeatFree(veh, 2)
                     SetPedIntoVehicle(PlayerPedId(), veh, 2)
                     QBCore.Functions.Notify("Rear Right Seat", "success", 3500)
+                    elseif args == 5 then 
+                    IsVehicleSeatFree(veh, 3)
+                    SetPedIntoVehicle(PlayerPedId(), veh, 3)
+                    QBCore.Functions.Notify("Back Rear Left Seat", "success", 3500)
+                    elseif args == 6 then 
+                    IsVehicleSeatFree(veh, 4)
+                    SetPedIntoVehicle(PlayerPedId(), veh, 4)
+                    QBCore.Functions.Notify("Back Rear Right Seat", "success", 3500)
                     elseif args == 0 or nil then
                     QBCore.Functions.Notify("Select a Proper Seat", "error", 3500)
                     end
@@ -154,6 +162,7 @@ RegisterNetEvent('qb-vehiclemenu:enginecontrol:on', function(args)
                 QBCore.Functions.Notify("Engine Off", "success", 3500)
                 end
             end
+            TriggerEvent('ccvehmenu:client:engineMenu')
     else
         QBCore.Functions.Notify("Can\'t Engage Engine From This Seat", "error", 3500)
     end
@@ -189,6 +198,7 @@ RegisterNetEvent('qb-vehiclemenu:doorcontrol', function(args)
                     SetVehicleDoorOpen(veh, 4, false, false)
                     SetVehicleDoorOpen(veh, 5, false, false)
                     end
+                    TriggerEvent('ccvehmenu:client:doorMenu')
                 end
             else
                 QBCore.Functions.Notify('Doors are Closed')
@@ -234,6 +244,7 @@ RegisterNetEvent('qb-vehiclemenu:neoncontrol', function()
     SetVehicleNeonLightEnabled(vehicle, 2, not neonsOn)
     SetVehicleNeonLightEnabled(vehicle, 3, not neonsOn)
         VehiclesWithNeons[vehicle] = not neonsOn
+        TriggerEvent('ccvehmenu:client:neonMenu')
 
 end)
 ------ Livery Events ------
@@ -255,6 +266,7 @@ local livery = IsVehicleSeatFree(veh, -2)
                     SetVehicleLivery(veh, 4)
                     elseif args == 5 then 
                     SetVehicleLivery(veh, 5)
+                    TriggerEvent('ccvehmenu:client:liveryMenu')
                     end
                 end
             else
@@ -290,6 +302,9 @@ RegisterNetEvent('ccvehmenu:client:seatsMenu', function()
         elseif seatCount == 4 then
             createSeatMenu()
             exports['qb-menu']:openMenu(seatMenu)
+        elseif seatCount == 6 then
+            create6SeatMenu()
+            exports['qb-menu']:openMenu(seat6Menu)
         end
     end
 end)
@@ -343,6 +358,27 @@ RegisterNetEvent('ccvehmenu:client:liveryMenu', function()
     end
 end)
 
+-----Turbo Check
+RegisterNetEvent('ccvehmenu:client:turbo', function()
+    if PlayerData.job.name == "police" then
+        local playerPed = PlayerPedId()
+        local veh = GetVehiclePedIsIn(playerPed, false)
+            if veh == GetVehiclePedIsIn(PlayerPedId(), true) then
+                local isEnabled = IsToggleModOn(veh, 18)
+                if isEnabled then
+                    QBCore.Functions.Notify("This car has a Turbo installed.")
+                else 
+                    QBCore.Functions.Notify("No Turbo installed.")
+                end
+                TriggerEvent('ccvehmenu:client:ccMenu')
+            elseif veh == false then
+                QBCore.Functions.Notify('Not In A Vehicle..')
+            end
+    else
+        QBCore.Functions.Notify('Wrong Job Credentials..', 'error')
+    end   
+end)
+
 ------ Menu Structures ------
 
 function createCarControlMenu()
@@ -392,11 +428,27 @@ function createCarControlMenu()
             }
         },
         {
+            header = "Turbo-Check",
+            txt = "Check Turbo (PD)",
+            params = {
+                isServer = false,
+                event = "ccvehmenu:client:turbo",
+            }
+        },
+        {
             header = "Livery ",
-			txt = "Swap Liveries (PD, EMS, Mech Only)",
-			params = {
+    	    txt = "Swap Liveries (PD, EMS, Mech Only)",
+    	    params = {
                 isServer = false,
                 event = "ccvehmenu:client:liveryMenu",
+            }
+        },
+        {
+            header = "Close Menu",
+			txt = "Close Menu",
+			params = {
+                isServer = false,
+                event = exports['qb-menu']:closeMenu(),
             }
         },
     }
@@ -672,7 +724,7 @@ function createEngineMenu()
             }
         },
     }
-    exports['qb-menu']:openMenu(seatMenu)
+    exports['qb-menu']:openMenu(engineMenu)
 end
 
 function createDoorMenu()
@@ -934,4 +986,76 @@ function createLiveryMenu()
         },
     }
     exports['qb-menu']:openMenu(liveryMenu)
+end
+
+function create6SeatMenu()
+    seat6Menu = {
+        {
+            isHeader = true,
+            header = ' 🚓 | Seat Controls'
+        },
+        {
+            header = "Swap To Driver",
+			txt = "Choose Driver Seat",
+			params = {
+                isServer = false,
+                event = "qb-vehiclemenu:seatcontrol",
+                args = 1,
+            }
+        },
+        {
+            header = "Swap To Passenger",
+			txt = "Choose Passenger Seat",
+			params = {
+                isServer = false,
+                event = "qb-vehiclemenu:seatcontrol",
+                args = 2,
+            }
+        },
+        {
+            header = "Swap To Driver Rear",
+			txt = "Choose Driver Rear Seat",
+			params = {
+                isServer = false,
+                event = "qb-vehiclemenu:seatcontrol",
+                args = 3,
+            }
+        },
+        {
+            header = "Swap To Passenger Rear",
+			txt = "Choose Passenger Rear Seat",
+			params = {
+                isServer = false,
+                event = "qb-vehiclemenu:seatcontrol",
+                args = 4,
+            }
+        },
+        {
+            header = "Swap To Back Rear",
+			txt = "Choose Back Left Rear Seat",
+			params = {
+                isServer = false,
+                event = "qb-vehiclemenu:seatcontrol",
+                args =5,
+            }
+        },
+        {
+            header = "Swap To Back Rear",
+			txt = "Choose Back Right Rear Seat",
+			params = {
+                isServer = false,
+                event = "qb-vehiclemenu:seatcontrol",
+                args =6,
+            }
+        },
+        {
+            header = '🔙 | Back',
+            txt = 'Go Back to Car Control Menu',
+            params = {
+                isServer = false,
+                event = 'ccvehmenu:client:openMenu',
+            }
+        },
+    }
+    exports['qb-menu']:openMenu(seat6Menu)
 end
