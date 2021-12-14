@@ -41,33 +41,9 @@ qb-radialmenu - https://github.com/qbcore-framework/qb-radialmenu
 
 -----------------------------------------------------------------------------------------------------------------
 
-## Next Version To Be Released - 
-
-`Version 1.1.0 is Coming SOON ™️`
-
-Added a `Vehicle Seat Check` to Display Proper Seat, Windows, and Doors Menus for 2 Door & 4 Doors Vehicles
-
-Added `Job Lock` function to Livery Menu 
-
-Added `Neon Light Menu` to toggle on/off your neon light kit must be installed for it to work. (Notifies if no lights are installed.)
-
-Added `Livery Menu` section for PD/EMS/Mechanic Livery Selection in the New Livery Menu
-
-Working on Adding Vehicle Extras Menu - Switch On/Off Vehicle Extras (Will be released in 1.1.x)
-
------------------------------------------------------------------------------------------------------------------
-
 `Known Bugs`
 
 Job Check system is being fine tuned, wanting to add proper success & error functions - Working to resolve this
-
------------------------------------------------------------------------------------------------------------------
-
-Plans to be added in next few updates - 
-`Will be looking for a way to figure out how to keep the qb-menu Menu up after selection for doors, windows, and seats`
-`Will Add Extras Menu Built In`
-`Will Add Vehicle Examination For Mechanics (future plans)`
-`Will Look into Adding Examination for PD as well to see if vehicle is modified for racing - i.e, Nos, Turbo (future plan)`
 
 -----------------------------------------------------------------------------------------------------------------
 
