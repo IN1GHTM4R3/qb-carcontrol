@@ -43,7 +43,9 @@ qb-radialmenu - https://github.com/qbcore-framework/qb-radialmenu
 
 ## Next Version To Be Released - 
 
-`Version 1.1.1 is Here ™️`
+`Version 1.2 is Here ™️`
+
+*Added in 1.2* a `Vehicle Extras Menu` to add or remove vehicle extras from pd, ems, and civilian cars.
 
 *Added in 1.1.0* a `Vehicle Seat Check` to Display Proper Seat, Windows, and Doors Menus for 2 Door & 4 Doors Vehicles
 
@@ -57,10 +59,6 @@ qb-radialmenu - https://github.com/qbcore-framework/qb-radialmenu
 
 *NEW* Added `Constant Menu` Menus now stay up or revert to main menu if singular selections are made i.e, Neon, Livery Menu, Turbo Check
 
-`Still Need to Finish this for 1.2 Release`
-
-*Working* on Adding Vehicle Extras Menu - Switch On/Off Vehicle Extras (Will be released in 1.1.x)
-
 -----------------------------------------------------------------------------------------------------------------
 
 `Known Bugs`
@@ -70,7 +68,6 @@ Job Check system is being fine tuned, wanting to add proper success & error func
 -----------------------------------------------------------------------------------------------------------------
 
 Plans to be added in next update - 
-`Will Add Extras Menu Built In`
 `Will Add Vehicle Examination For Mechanics (future plans)`
 `Will Look into Adding Examination for PD as well to see if vehicle is modified for racing - i.e, *Nos, *Tuner Chip, !Tuning Levels (*Future Plan !Separate Resource)`
 
