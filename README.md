@@ -29,7 +29,7 @@ QBCore Framework - https://github.com/qbcore-framework/qb-core
 
 qb-menu - https://github.com/qbcore-framework/qb-menu 
 
-qb-radialmenu - https://github.com/qbcore-framework/qb-radialmenu
+qb-radialmenu - https://github.com/IN1GHTM4R3/qb-radialmenu
 
 
 ## Credits : 
